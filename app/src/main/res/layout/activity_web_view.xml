@@ -46,26 +46,24 @@
             android:onClick="addFvorites"/>
     </android.support.constraint.ConstraintLayout>
 
-<com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/refreshLayout"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    app:tr_enable_loadmore="false"
-    android:fitsSystemWindows="true"
-    app:layout_constraintHeight_percent="0.95"
-    app:layout_constraintTop_toBottomOf="@+id/title"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:background="@color/white">
-    <WebView
-        android:id="@+id/webview"
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-    </WebView>
-</com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:tr_enable_loadmore="false">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></WebView>
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 
     </android.support.constraint.ConstraintLayout>
