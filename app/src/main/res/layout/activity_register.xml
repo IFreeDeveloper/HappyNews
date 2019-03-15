@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.john.LoginRegister.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/newsicon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/newsicon"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toTopOf="@+id/InputArea"
+        custom:layout_constraintRight_toRightOf="parent"
+        custom:layout_constraintLeft_toLeftOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/InputArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toTopOf="@+id/Button"
+        custom:layout_constraintLeft_toLeftOf="parent"
+        custom:layout_constraintRight_toRightOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/newsicon">
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/Username"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toTopOf="@+id/EmailAdress"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_editor_absoluteX="42dp"
+            custom:mtf_backgroundColor="#f5f5f5"
+            custom:mtf_image="@drawable/username"
+            custom:mtf_labelColor="#646464">
+
+            <EditText
+                android:id="@+id/edit_Username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:lines="1"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/EmailAdress"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toTopOf="@+id/Mobile"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/Username"
+            custom:layout_editor_absoluteX="42dp"
+            custom:mtf_backgroundColor="#f5f5f5"
+            custom:mtf_image="@drawable/email"
+            custom:mtf_labelColor="#646464">
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:lines="1"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/Mobile"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toTopOf="@+id/PassWord"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/EmailAdress"
+            custom:layout_editor_absoluteX="42dp"
+            custom:mtf_backgroundColor="#f5f5f5"
+            custom:mtf_image="@drawable/phone"
+            custom:mtf_labelColor="#646464">
+
+            <EditText
+                android:id="@+id/edit_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile"
+                android:lines="1"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/PassWord"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toTopOf="@+id/ConfirmPassword"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/Mobile"
+            custom:layout_editor_absoluteX="42dp"
+            custom:mtf_backgroundColor="#f5f5f5"
+            custom:mtf_image="@drawable/password"
+            custom:mtf_labelColor="#646464">
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/ConfirmPassword"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/PassWord"
+            custom:layout_editor_absoluteX="42dp"
+            custom:mtf_backgroundColor="#f5f5f5"
+            custom:mtf_image="@drawable/password"
+            custom:mtf_labelColor="#646464">
+
+            <EditText
+                android:id="@+id/edit_confirmpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toBottomOf="@+id/InputArea"
+        custom:layout_constraintLeft_toLeftOf="parent"
+        custom:layout_constraintRight_toRightOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintVertical_bias="0.5">
+
+        <com.dd.processbutton.iml.ActionProcessButton
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            custom:pb_colorComplete="@color/green_complete"
+            custom:pb_colorNormal="@color/blue_normal"
+            custom:pb_colorPressed="@color/blue_pressed"
+            custom:pb_colorProgress="@color/purple_progress"
+            custom:pb_textComplete="Success"
+            custom:pb_textProgress="Processing"
+            custom:pb_textError="Register Failed"
+            custom:pb_colorError="@color/red_error"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintWidth_percent="0.5" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

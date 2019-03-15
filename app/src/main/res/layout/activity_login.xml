@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
+    app:ignore="NamespaceTypo"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/newsicon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/newsicon"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toTopOf="@+id/InputArea"
+        custom:layout_constraintRight_toRightOf="parent"
+        custom:layout_constraintLeft_toLeftOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/InputArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintLeft_toLeftOf="parent"
+        custom:layout_constraintRight_toRightOf="parent"
+        custom:layout_constraintVertical_bias="0.4"
+        >
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:id="@+id/EmailAdress"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        custom:layout_editor_absoluteX="42dp"
+        custom:mtf_image="@drawable/email"
+        custom:mtf_labelColor="#646464"
+        custom:mtf_backgroundColor="#f5f5f5"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toTopOf="@+id/PassWord"
+        custom:layout_constraintLeft_toLeftOf="parent"
+        custom:layout_constraintRight_toRightOf="parent">
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:lines="1"/>
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/PassWord"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            custom:layout_editor_absoluteX="42dp"
+            custom:mtf_image="@drawable/password"
+            custom:mtf_labelColor="#646464"
+            custom:mtf_backgroundColor="#f5f5f5"
+            custom:layout_constraintTop_toBottomOf="@+id/EmailAdress"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent">
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:lines="1"/>
+        </com.github.florent37.materialtextfield.MaterialTextField>
+    </android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Email and Password"
+        custom:layout_constraintTop_toBottomOf="@+id/InputArea"
+        custom:layout_constraintBottom_toTopOf="@+id/Button"
+        custom:layout_constraintStart_toStartOf="@+id/InputArea"
+        android:textColor="@color/dark_grey"
+        android:theme="@style/My_CheckBox"
+        android:checked="true"
+        android:textSize="15sp"
+        />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toBottomOf="@+id/checkbox"
+        custom:layout_constraintLeft_toLeftOf="parent"
+        custom:layout_constraintRight_toRightOf="parent"
+        custom:layout_constraintBottom_toTopOf="@id/register"
+        custom:layout_constraintVertical_bias="0.4">
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        custom:pb_colorComplete="@color/green_complete"
+        custom:pb_colorNormal="@color/blue_normal"
+        custom:pb_colorPressed="@color/blue_pressed"
+        custom:pb_colorProgress="@color/purple_progress"
+        custom:pb_textComplete="Success"
+        custom:pb_textProgress="Processing"
+        custom:pb_textError="Login Failed"
+        custom:pb_colorError="@color/red_error"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintWidth_percent="0.5" />
+    </android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/register"
+        android:onClick="btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Don't have an account? Register now!"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
