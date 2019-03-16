@@ -154,7 +154,7 @@ public class NewsActivity extends AppCompatActivity {
         for(int i=0;i<s.length;i++){
             map.put(i,s[i]);
         }
-        String temp[] = {"bussiness","entertainment","general","health","science","sports","technology"};
+        String temp[] = {"business","entertainment","general","health","science","sports","technology"};
         int number = 0;
         Vector<String>vector = new Vector<>();
         for(int i=0;i<temp.length;i++){
