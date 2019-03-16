@@ -21,14 +21,15 @@ public class OperateUserAccount {
         }
     }
     public static boolean Register(String username, String email, String mobile, String password){
-        List<User> userlist = LitePal.where("EmailAdress == ?",email).find(User.class);
-        if(userlist.isEmpty()){
+        List<User> userlist1 = LitePal.where("UserName == ?",username).find(User.class);
+        List<User> userlist2 = LitePal.where("EmailAdress == ?",email).find(User.class);
+        if((userlist1.isEmpty())&&(userlist2.isEmpty())){
             User user = new User();
             user.setUserName(username);
             user.setEmailAdress(email);
             user.setMobile(mobile);
             user.setPassword(password);
-            user.setFavoriteChannel("bussiness,entertainment,general,health,science,sports,technology");
+            user.setFavoriteChannel("business,entertainment,general,health,science,sports,technology");
             if(user.save()){
                 return true;
             }
