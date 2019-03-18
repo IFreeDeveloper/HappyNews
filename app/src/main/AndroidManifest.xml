@@ -19,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.john.LoginRegister.LoginActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name="com.example.john.Web.WebViewActivity" />
         <activity android:name="com.example.john.LoginRegister.RegisterActivity" />
-        <activity android:name=".FavoritesActivity"></activity>
+        <activity android:name=".FavoritesActivity" />
+        <activity android:name="com.example.john.LoginRegister.LoginActivity"></activity>
     </application>
 
 </manifest>
