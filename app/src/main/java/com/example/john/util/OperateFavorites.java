@@ -6,7 +6,7 @@ import java.util.List;
 
 public class OperateFavorites {
     public static boolean setFavorites(String username,String title,String imageURL,String newsURL){
-        List<Favorites> favoritesList = LitePal.where("NewsURL == ?",newsURL).find(Favorites.class);
+        List<Favorites> favoritesList = LitePal.where("UserName == ?","NewsURL == ?",username,newsURL).find(Favorites.class);
         if(favoritesList.isEmpty()){
             Favorites favorites = new Favorites();
             favorites.setUserName(username);
