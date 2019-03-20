@@ -1,4 +1,4 @@
-#HappyNews
+# HappyNews
 ##Product Guideline
 ###1. Installation
 ####Click the apk file to install the application
