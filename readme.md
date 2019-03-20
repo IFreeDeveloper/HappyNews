@@ -6,14 +6,14 @@
 ### 2. Register
 1. The first time you open the app, you can see the login interface as below.
 ![login_2](./pictures/login_2.jpg)
-2. Click the text ¡°Don¡¯t have an account? Register now!¡± to open the register interface.
+2. Click the text "Don't have an account? Register now!" to open the register interface.
 ![register_1](./pictures/register_1.jpg)
 3. Fill in the information that asked, and click register button to create a new account.
 ![register_2](./pictures/register_2.jpg)
 ### 3. Login
 1. After registration, it will automatically jump back to the login interface, and the Email and password will be filled in automatically.
 ![login_4](./pictures/login_4.jpg)
-2. The default setting is to remember the users¡¯ email and password, so if you don¡¯t want it to remember that, just click it.
+2. The default setting is to remember the users' email and password, so if you don't want it to remember that, just click it.
 ![login_3](./pictures/login_3.jpg)
 ### 4. Functions
 #### 1. Read different types of news
@@ -40,7 +40,7 @@ Click one of the news to start reading.
 #### 3. Collect your favorite news
 1. If you like one of the news and wanted to read it later, you can click the star in the top right corner.
 ![reading](./pictures/reading.jpg)
-2. Then, open the navigation interface, click ¡°Favorites¡± to open the favorites interface
+2. Then, open the navigation interface, click "Favorites" to open the favorites interface
 ![navigation](./pictures/navigation.jpg)
 ![favorites](./pictures/favorites.jpg)
 
