@@ -26,6 +26,8 @@ public class RegisterActivity extends AppCompatActivity implements ProgressGener
     EditText editConfirm;
     EditText editMobile;
     EditText editPassword;
+    String confirm;
+    String password;
     ProgressGenerator progressGenerator;
     ActionProcessButton btnRegister;
     @Override
@@ -47,6 +49,8 @@ public class RegisterActivity extends AppCompatActivity implements ProgressGener
                 progressGenerator.start(btnRegister);
                 String email = editEmail.getText().toString();
                 String mobile = editMobile.getText().toString();
+                confirm = editConfirm.getText().toString();
+                password = editPassword.getText().toString();
                 isEmail = checkEmail(email);
                 isMobile = checkMobile(mobile);
                 btnRegister.setEnabled(false);
@@ -55,10 +59,6 @@ public class RegisterActivity extends AppCompatActivity implements ProgressGener
                 editConfirm.setEnabled(false);
                 editMobile.setEnabled(false);
                 editUser.setEnabled(false);
-                isSuccess = OperateUserAccount.Register(editUser.getText().toString(),
-                        editEmail.getText().toString(),
-                        editMobile.getText().toString(),
-                        editPassword.getText().toString());
             }
         });
     }
@@ -66,36 +66,27 @@ public class RegisterActivity extends AppCompatActivity implements ProgressGener
     public void onComplete() {
         if(!isEmail){
             Toast.makeText(this, "Please check the format of the email adress", Toast.LENGTH_LONG).show();
-            btnRegister.setProgress(-1);
-            btnRegister.setEnabled(true);
-            editEmail.setEnabled(true);
-            editPassword.setEnabled(true);
-            editConfirm.setEnabled(true);
-            editMobile.setEnabled(true);
-            editUser.setEnabled(true);
+            failed();
             return;
         }
         if(!isMobile){
-            Toast.makeText(this, "Please check the format of the phone number", Toast.LENGTH_LONG).show();
-            btnRegister.setProgress(-1);
-            btnRegister.setEnabled(true);
-            editEmail.setEnabled(true);
-            editPassword.setEnabled(true);
-            editConfirm.setEnabled(true);
-            editMobile.setEnabled(true);
-            editUser.setEnabled(true);
+            Toast.makeText(this, "Please check the format of the phone number", Toast.LENGTH_SHORT).show();
+            failed();
             return;
         }
+        if(!confirm.equals(password)){
+            Toast.makeText(this, "The passwords entered do not match", Toast.LENGTH_SHORT).show();
+            failed();
+            return;
+        }
+        isSuccess = OperateUserAccount.Register(editUser.getText().toString(),
+                editEmail.getText().toString(),
+                editMobile.getText().toString(),
+                editPassword.getText().toString());
         if(!isSuccess)
         {
-            Toast.makeText(this, "Register Failed,please change the username and try again", Toast.LENGTH_LONG).show();
-            btnRegister.setProgress(-1);
-            btnRegister.setEnabled(true);
-            editEmail.setEnabled(true);
-            editPassword.setEnabled(true);
-            editConfirm.setEnabled(true);
-            editMobile.setEnabled(true);
-            editUser.setEnabled(true);
+            Toast.makeText(this, "Register Failed", Toast.LENGTH_SHORT).show();
+            failed();
             return;
         }
         else
@@ -112,6 +103,15 @@ public class RegisterActivity extends AppCompatActivity implements ProgressGener
 
     public void btnRegister(View view){
         Toast.makeText(RegisterActivity.this,"Login Success",Toast.LENGTH_SHORT).show();
+    }
+    private void failed(){
+        btnRegister.setProgress(-1);
+        btnRegister.setEnabled(true);
+        editEmail.setEnabled(true);
+        editPassword.setEnabled(true);
+        editConfirm.setEnabled(true);
+        editMobile.setEnabled(true);
+        editUser.setEnabled(true);
     }
     private static Boolean checkEmail(String email) {
         if (email.matches("^[a-z0-9A-Z]+[- | a-z0-9A-Z . _]+@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-z]{2,}$")) {

@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
-                android:lines="1"
+                android:singleLine="true"
                 android:textColor="@android:color/black"
                 android:textSize="15sp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
-                android:lines="1"
+                android:singleLine="true"
                 android:textColor="@android:color/black"
                 android:textSize="15sp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mobile"
-                android:lines="1"
+                android:singleLine="true"
                 android:textColor="@android:color/black"
                 android:textSize="15sp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:lines="1"
+                android:singleLine="true"
                 android:textColor="@android:color/black"
                 android:textSize="15sp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Confirm"
                 android:inputType="textPassword"
-                android:lines="1"
+                android:singleLine="true"
                 android:textColor="@android:color/black"
                 android:textSize="15sp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
