@@ -27,7 +27,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewsActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name="com.example.john.Web.WebViewActivity" />
         <activity android:name="com.example.john.LoginRegister.RegisterActivity" />
         <activity android:name=".FavoritesActivity" />
