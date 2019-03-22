@@ -6,12 +6,14 @@ public class NewsItem {
     private String title="";
     private String source="";
     private String username="";
-    public NewsItem(String imageURL, String newsURL, String title, String source,String username) {
+    private String time = "";
+    public NewsItem(String imageURL, String newsURL, String title, String source,String username,String time) {
         this.imageURL = imageURL;
         this.newsURL = newsURL;
         this.title = title;
         this.source = source;
         this.username = username;
+        this.time = time;
     }
 
     public String getImageURL() {
@@ -52,5 +54,13 @@ public class NewsItem {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

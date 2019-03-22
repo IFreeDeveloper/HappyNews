@@ -74,6 +74,9 @@ public class LoginActivity extends AppCompatActivity implements ProgressGenerato
                 isSuccess = OperateUserAccount.Login(editEmail.getText().toString(),editPassword.getText().toString());
             }
         });
+        if(!intent.hasExtra("logout")&&isRemember){
+            btnSignIn.performClick();
+        }
     }
 
     @Override

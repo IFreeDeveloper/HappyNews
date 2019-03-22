@@ -5,7 +5,7 @@ import org.litepal.LitePal;
 import java.util.List;
 
 public class OperateFavorites {
-    public static boolean setFavorites(String username,String title,String imageURL,String newsURL){
+    public static boolean setFavorites(String username,String title,String imageURL,String newsURL,String time,String source){
         List<Favorites> favoritesList = LitePal.where("UserName == ? and NewsURL == ?",username,newsURL).find(Favorites.class);
         if(favoritesList.isEmpty()){
             Favorites favorites = new Favorites();
@@ -13,6 +13,8 @@ public class OperateFavorites {
             favorites.setTitle(title);
             favorites.setImageURL(imageURL);
             favorites.setNewsURL(newsURL);
+            favorites.setTime(time);
+            favorites.setSource(source);
             if(favorites.save()){
                 return true;
             }

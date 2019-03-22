@@ -8,6 +8,7 @@ public class Favorites extends LitePalSupport {
     String Source;
     String ImageURL;
     String NewsURL;
+    String time;
 
     public String getUserName() {
         return UserName;
@@ -47,5 +48,13 @@ public class Favorites extends LitePalSupport {
 
     public void setNewsURL(String newsURL) {
         NewsURL = newsURL;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

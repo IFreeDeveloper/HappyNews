@@ -21,6 +21,7 @@ public class WebViewActivity extends AppCompatActivity {
     String Source;
     String ImageURL;
     String NewsURL;
+    String Time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class WebViewActivity extends AppCompatActivity {
         UserName = intent.getStringExtra("UserName");
         Source = intent.getStringExtra("Source");
         ImageURL = intent.getStringExtra("ImageURL");
+        Time = intent.getStringExtra("Time");
         TextView tv = (TextView)findViewById(R.id.text_title);
         tv.setText(Title);
         WebView web = (WebView) findViewById(R.id.webview);
@@ -52,7 +54,7 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     public void addFvorites(View view) {
-        boolean isSuccess = OperateFavorites.setFavorites(UserName,Title,ImageURL,NewsURL);
+        boolean isSuccess = OperateFavorites.setFavorites(UserName,Title,ImageURL,NewsURL,Time,Source);
         if(isSuccess){
             Toast.makeText(WebViewActivity.this,"Successfully add to favorites",Toast.LENGTH_SHORT).show();
         }

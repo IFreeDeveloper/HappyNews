@@ -46,7 +46,8 @@
             android:hint="Email"
             android:textColor="@android:color/black"
             android:textSize="15sp"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/cursor_color"/>
     </com.github.florent37.materialtextfield.MaterialTextField>
 
         <com.github.florent37.materialtextfield.MaterialTextField
@@ -69,7 +70,8 @@
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:inputType="textPassword"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/cursor_color"/>
         </com.github.florent37.materialtextfield.MaterialTextField>
     </android.support.constraint.ConstraintLayout>
     <android.support.v7.widget.AppCompatCheckBox
@@ -107,8 +109,8 @@
         custom:pb_colorProgress="@color/purple_progress"
         custom:pb_textComplete="Success"
         custom:pb_textProgress="Processing"
-        custom:pb_textError="Login Failed"
-        custom:pb_colorError="@color/red_error"
+        custom:pb_textError="TRY AGAIN"
+        custom:pb_colorError="@color/blue_normal"
         custom:layout_constraintStart_toStartOf="parent"
         custom:layout_constraintEnd_toEndOf="parent"
         custom:layout_constraintWidth_percent="0.5" />

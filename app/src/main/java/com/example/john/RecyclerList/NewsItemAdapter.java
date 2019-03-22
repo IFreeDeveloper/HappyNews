@@ -31,12 +31,14 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.ViewHo
         TextView newsURL;
         ImageView imageView;
         String imageURL;
+        TextView time;
         public ViewHolder(@NonNull final View itemView, final Context context, final String username) {
             super(itemView);
             title = (TextView)itemView.findViewById(R.id.title);
             source = (TextView)itemView.findViewById(R.id.source);
             imageView = (ImageView)itemView.findViewById(R.id.imageView);
             newsURL = (TextView)itemView.findViewById(R.id.NewsURL);
+            time = (TextView)itemView.findViewById(R.id.time);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -47,6 +49,7 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.ViewHo
                     intent.putExtra("Title",title.getText().toString());
                     intent.putExtra("Source",source.getText().toString());
                     intent.putExtra("UserName",username);
+                    intent.putExtra("Time",time.getText().toString());
                     context.startActivity(intent);
                 }
             });
@@ -69,6 +72,7 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.ViewHo
         viewHolder.title.setText(newsItem.getTitle());
         viewHolder.source.setText(newsItem.getSource());
         viewHolder.newsURL.setText(newsItem.getNewsURL());
+        viewHolder.time.setText(newsItem.getTime());
     }
 
     @Override

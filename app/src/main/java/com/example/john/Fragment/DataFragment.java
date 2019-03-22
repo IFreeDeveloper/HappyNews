@@ -216,7 +216,7 @@ public class DataFragment extends Fragment{
                 newsPage++;
                 for (int i = 0; i < articlesBeans.size(); i++) {
                     ArticlesBean articlesBean = articlesBeans.get(i);
-                    NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(), articlesBean.getUrl(), articlesBean.getTitle(), articlesBean.getSource().getId(),username);
+                    NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(), articlesBean.getUrl(), articlesBean.getTitle(), articlesBean.getSource().getId(),username,articlesBean.getPublishedAt());
                     newsItems.add(newsItem);
                 }
                 adapter.notifyDataSetChanged();

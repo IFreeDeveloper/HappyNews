@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.codingending.library.FairySearchView;
 import com.example.john.Fragment.DataFragment;
 import com.example.john.Fragment.MyPagerAdapter;
+import com.example.john.LoginRegister.LoginActivity;
 import com.example.john.RecyclerList.NewsItem;
 import com.example.john.util.ArticlesBean;
 import com.example.john.util.DragSortDialog;
@@ -64,6 +65,11 @@ public class NewsActivity extends AppCompatActivity {
                         favorites.putExtra("UserName",username);
                         startActivity(favorites);
                         break;
+                    case R.id.item_logout:
+                        Intent login = new Intent(NewsActivity.this,LoginActivity.class);
+                        login.putExtra("logout",username);
+                        startActivity(login);
+                        finish();
                     default:
                         break;
                 }
@@ -113,7 +119,7 @@ public class NewsActivity extends AppCompatActivity {
     private void initNewsItem(List<ArticlesBean>articlesBeans){
         for(int i=0;i<articlesBeans.size();i++){
             ArticlesBean articlesBean = articlesBeans.get(i);
-            NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(),articlesBean.getUrl(),articlesBean.getTitle(),articlesBean.getSource().getId(),username);
+            NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(),articlesBean.getUrl(),articlesBean.getTitle(),articlesBean.getSource().getId(),username,articlesBean.getPublishedAt());
             newsItems.add(newsItem);
         }
     }

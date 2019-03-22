@@ -74,7 +74,7 @@ public class ArticlesBean {
     }
 
     public String getPublishedAt() {
-        return publishedAt;
+        return publishedAt.split("T")[0];
     }
 
     public void setPublishedAt(String publishedAt) {

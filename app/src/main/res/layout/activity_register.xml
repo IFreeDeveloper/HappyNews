@@ -45,7 +45,8 @@
                 android:hint="Username"
                 android:singleLine="true"
                 android:textColor="@android:color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textCursorDrawable="@drawable/cursor_color"/>
         </com.github.florent37.materialtextfield.MaterialTextField>
 
         <com.github.florent37.materialtextfield.MaterialTextField
@@ -68,7 +69,8 @@
                 android:hint="Email"
                 android:singleLine="true"
                 android:textColor="@android:color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textCursorDrawable="@drawable/cursor_color"/>
         </com.github.florent37.materialtextfield.MaterialTextField>
 
         <com.github.florent37.materialtextfield.MaterialTextField
@@ -91,7 +93,8 @@
                 android:hint="Mobile"
                 android:singleLine="true"
                 android:textColor="@android:color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textCursorDrawable="@drawable/cursor_color"/>
         </com.github.florent37.materialtextfield.MaterialTextField>
 
         <com.github.florent37.materialtextfield.MaterialTextField
@@ -115,7 +118,8 @@
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="@android:color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textCursorDrawable="@drawable/cursor_color"/>
         </com.github.florent37.materialtextfield.MaterialTextField>
 
         <com.github.florent37.materialtextfield.MaterialTextField
@@ -139,7 +143,8 @@
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="@android:color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textCursorDrawable="@drawable/cursor_color"/>
         </com.github.florent37.materialtextfield.MaterialTextField>
 
 
@@ -168,8 +173,8 @@
             custom:pb_colorProgress="@color/purple_progress"
             custom:pb_textComplete="Success"
             custom:pb_textProgress="Processing"
-            custom:pb_textError="Register Failed"
-            custom:pb_colorError="@color/red_error"
+            custom:pb_textError="TRY AGAIN"
+            custom:pb_colorError="@color/blue_normal"
             custom:layout_constraintStart_toStartOf="parent"
             custom:layout_constraintEnd_toEndOf="parent"
             custom:layout_constraintWidth_percent="0.5" />
