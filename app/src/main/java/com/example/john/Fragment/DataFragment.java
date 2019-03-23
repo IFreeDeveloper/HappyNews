@@ -21,6 +21,7 @@ import com.example.john.RecyclerList.NewsItemAdapter;
 import com.example.john.util.ArticlesBean;
 import com.example.john.util.NewsAPI;
 import com.example.john.happynews.R;
+import com.example.john.util.OperateBuffer;
 import com.example.john.util.TopHeadlinesBean;
 import com.google.gson.Gson;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
@@ -86,7 +87,7 @@ public class DataFragment extends Fragment{
         newsList = rootView.findViewById(R.id.newslist);
         information = rootView.findViewById(R.id.information);
         newsList.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
-        adapter = new NewsItemAdapter(newsItems,getContext(),username);
+        adapter = new NewsItemAdapter(newsItems,getContext(),username,title);
         newsList.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         newsList.setLayoutManager(layoutManager);
@@ -197,8 +198,12 @@ public class DataFragment extends Fragment{
             if (result == null) {
                 refreshLayout.finishRefreshing();
                 refreshLayout.finishLoadmore();
-                //Toast.makeText(getContext(),"Failed to get data,please try again",Toast.LENGTH_SHORT).show();
-                information.setVisibility(View.VISIBLE);
+                Toast.makeText(getContext(),"Failed to get data,please try again",Toast.LENGTH_SHORT).show();
+                List<NewsItem>temp = OperateBuffer.getBuffer(title);
+                for (int i = 0; i < temp.size(); i++) {
+                    newsItems.add(temp.get(i));
+                }
+                adapter.notifyDataSetChanged();
                 return;
             }
             if(result.equals("NoMore")){
@@ -221,7 +226,7 @@ public class DataFragment extends Fragment{
                 newsPage++;
                 for (int i = 0; i < articlesBeans.size(); i++) {
                     ArticlesBean articlesBean = articlesBeans.get(i);
-                    NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(), articlesBean.getUrl(), articlesBean.getTitle(), articlesBean.getSource().getId(),username,articlesBean.getPublishedAt());
+                    NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(), articlesBean.getUrl(), articlesBean.getTitle(), articlesBean.getSource().getId(),articlesBean.getPublishedAt());
                     newsItems.add(newsItem);
                 }
                 adapter.notifyDataSetChanged();

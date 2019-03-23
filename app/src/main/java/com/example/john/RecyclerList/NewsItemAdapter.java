@@ -11,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.john.Web.WebViewActivity;
 import com.example.john.happynews.R;
+import com.example.john.util.OperateBuffer;
 
 import java.util.List;
 
@@ -20,6 +22,13 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.ViewHo
     private List<NewsItem> mNewsList;
     Context context;
     String username;
+    String channel;
+    public NewsItemAdapter(List<NewsItem> mNewsList, Context context,String username,String channel) {
+        this.mNewsList = mNewsList;
+        this.context = context;
+        this.username = username;
+        this.channel = channel;
+    }
     public NewsItemAdapter(List<NewsItem> mNewsList, Context context,String username) {
         this.mNewsList = mNewsList;
         this.context = context;
@@ -67,12 +76,16 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         NewsItem newsItem = mNewsList.get(i);
-        Glide.with(context).load(newsItem.getImageURL()).into(viewHolder.imageView);
+        Glide.with(context)
+                .load(newsItem.getImageURL())
+                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                .into(viewHolder.imageView);
         viewHolder.imageURL = newsItem.getImageURL();
         viewHolder.title.setText(newsItem.getTitle());
         viewHolder.source.setText(newsItem.getSource());
         viewHolder.newsURL.setText(newsItem.getNewsURL());
         viewHolder.time.setText(newsItem.getTime());
+        OperateBuffer.saveBuffer(channel,newsItem.getImageURL(),newsItem.getNewsURL(),newsItem.getTitle(),newsItem.getSource(),newsItem.getTime());
     }
 
     @Override

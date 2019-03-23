@@ -119,7 +119,7 @@ public class NewsActivity extends AppCompatActivity {
     private void initNewsItem(List<ArticlesBean>articlesBeans){
         for(int i=0;i<articlesBeans.size();i++){
             ArticlesBean articlesBean = articlesBeans.get(i);
-            NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(),articlesBean.getUrl(),articlesBean.getTitle(),articlesBean.getSource().getId(),username,articlesBean.getPublishedAt());
+            NewsItem newsItem = new NewsItem(articlesBean.getUrlToImage(),articlesBean.getUrl(),articlesBean.getTitle(),articlesBean.getSource().getId(),articlesBean.getPublishedAt());
             newsItems.add(newsItem);
         }
     }

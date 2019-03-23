@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
@@ -22,10 +24,13 @@ public class WebViewActivity extends AppCompatActivity {
     String ImageURL;
     String NewsURL;
     String Time;
+    WebView webView;
+    private static final String APP_CACHE_DIRNAME = "/webcache";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+        webView = (WebView)findViewById(R.id.webview);
         Intent intent = getIntent();
         Title = intent.getStringExtra("Title");
         NewsURL = intent.getStringExtra("NewsURL");
@@ -48,6 +53,14 @@ public class WebViewActivity extends AppCompatActivity {
                 refreshLayout.setEnableRefresh(false);
             }
         });
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
+        String cacheDirPath = getFilesDir().getAbsolutePath() + APP_CACHE_DIRNAME;
+        settings.setAppCachePath(cacheDirPath);
+        settings.setAppCacheEnabled(true);
     }
     public void btnReturn(View view){
         finish();

@@ -35,7 +35,7 @@ public class FavoritesActivity extends AppCompatActivity {
         if(!favorites.isEmpty()) {
             for (int i = 0; i < favorites.size(); i++) {
                 Favorites tempFavorites = favorites.get(i);
-                NewsItem tempItem = new NewsItem(tempFavorites.getImageURL(), tempFavorites.getNewsURL(), tempFavorites.getTitle(), tempFavorites.getSource(), tempFavorites.getUserName(),tempFavorites.getTime());
+                NewsItem tempItem = new NewsItem(tempFavorites.getImageURL(), tempFavorites.getNewsURL(), tempFavorites.getTitle(), tempFavorites.getSource(),tempFavorites.getTime());
                 newsItems.add(tempItem);
             }
             adapter = new NewsItemAdapter(newsItems, this, favorites.get(0).getUserName());

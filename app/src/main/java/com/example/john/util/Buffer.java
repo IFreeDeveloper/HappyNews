@@ -1,19 +1,16 @@
-package com.example.john.RecyclerList;
+package com.example.john.util;
 
-public class NewsItem {
+import com.bumptech.glide.Glide;
+
+import org.litepal.crud.LitePalSupport;
+
+public class Buffer extends LitePalSupport {
     private String imageURL="";
     private String newsURL="";
     private String title="";
     private String source="";
-    private String username="";
     private String time = "";
-    public NewsItem(String imageURL, String newsURL, String title, String source,String time) {
-        this.imageURL = imageURL;
-        this.newsURL = newsURL;
-        this.title = title;
-        this.source = source;
-        this.time = time;
-    }
+    private String channel="";
 
     public String getImageURL() {
         return imageURL;
@@ -47,19 +44,19 @@ public class NewsItem {
         this.source = source;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getTime() {
         return time;
     }
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getChannel() {
+        return channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
     }
 }
