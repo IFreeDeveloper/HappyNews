@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements ProgressGener
             return;
         }
         if(!isMobile){
-            Toast.makeText(this, "Please check the format of the phone number", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Chinese mobile phone only", Toast.LENGTH_SHORT).show();
             failed();
             return;
         }

@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -53,6 +54,7 @@ public class DataFragment extends Fragment{
     private String username;
     private String imageURL;
     private TwinklingRefreshLayout refreshLayout;
+    private ConstraintLayout information;
     @SuppressLint("ValidFragment")
     public DataFragment(String title,String username) {
         this.title = title;
@@ -82,6 +84,7 @@ public class DataFragment extends Fragment{
         View rootView = inflater.inflate(R.layout.page, container, false);
         newsItems.clear();
         newsList = rootView.findViewById(R.id.newslist);
+        information = rootView.findViewById(R.id.information);
         newsList.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
         adapter = new NewsItemAdapter(newsItems,getContext(),username);
         newsList.setAdapter(adapter);
@@ -92,6 +95,7 @@ public class DataFragment extends Fragment{
         refreshLayout.setOnRefreshListener(new RefreshListenerAdapter(){
             @Override
             public void onRefresh(final TwinklingRefreshLayout refreshLayout) {
+                information.setVisibility(View.GONE);
                 newsItems.clear();
                 mNews = 0;
                 newsPage = 1;
@@ -193,7 +197,8 @@ public class DataFragment extends Fragment{
             if (result == null) {
                 refreshLayout.finishRefreshing();
                 refreshLayout.finishLoadmore();
-                Toast.makeText(getContext(),"Failed to get data,please try again",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(),"Failed to get data,please try again",Toast.LENGTH_SHORT).show();
+                information.setVisibility(View.VISIBLE);
                 return;
             }
             if(result.equals("NoMore")){
